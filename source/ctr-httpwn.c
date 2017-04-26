@@ -263,7 +263,7 @@ Result setuphax_http_sslc(Handle httpc_sslc_handle, u8 *cert, u32 certsize)
 	}
 
 	//RootCertChain_contexthandle 0x1/0x2 are the first/second NIM-sysmodule RootCertChain. 0x3 is the ACT-sysmodule RootCertChain, which isn't used here.
-	for(RootCertChain_contexthandle=0x1; RootCertChain_contexthandle<0x3; RootCertChain_contexthandle++)
+	for(RootCertChain_contexthandle=0x1; RootCertChain_contexthandle<0x4; RootCertChain_contexthandle++)
 	{
 		ret = sslcAddTrustedRootCA(RootCertChain_contexthandle, cert, certsize, NULL);
 		if(R_FAILED(ret))break;
